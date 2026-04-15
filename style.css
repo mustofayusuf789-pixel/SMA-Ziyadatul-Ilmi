@@ -1,0 +1,109 @@
+/* style.css - Clean & Modern UI/UX Version */
+:root { 
+    --primary-color: #0d6efd; 
+    --wa-color: #25d366;
+}
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    scroll-behavior: smooth; 
+    background-color: #fcfcfc; 
+    overflow-x: hidden; /* Mencegah bug scroll samping saat animasi AOS */
+}
+
+/* NAVBAR GLASSMORPHISM */
+.navbar {
+    background: rgba(33, 37, 41, 0.9) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar-brand { font-weight: 700; letter-spacing: 1px; }
+
+/* HERO SECTION */
+.hero { 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/Gedung Sekolah.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    padding: 150px 0; 
+    color: white; 
+    text-align: center; 
+}
+
+/* GLOBAL SECTION STYLE */
+section { padding: 80px 0; }
+.section-title { font-weight: 700; margin-bottom: 50px; position: relative; padding-bottom: 15px; text-align: center; }
+.section-title::after {
+    content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 70px; height: 4px; background: var(--primary-color); border-radius: 2px;
+}
+
+/* KOTAK (CARDS) DENGAN HOVER PREMIUM */
+.custom-card { 
+    background: #ffffff; 
+    border-radius: 15px; 
+    padding: 30px; 
+    height: 100%; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    border-bottom: 5px solid var(--primary-color);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.custom-card:hover { 
+    transform: translateY(-12px); 
+    box-shadow: 0 20px 40px rgba(13, 110, 253, 0.15);
+}
+
+/* FASILITAS */
+.facility-card { border: none; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); height: 100%; background: #fff; }
+.facility-card img { height: 220px; object-fit: cover; width: 100%; transition: 0.5s; }
+.facility-card:hover img { transform: scale(1.1); }
+
+/* FORM REGISTRATION */
+.form-registration { 
+    background: white; 
+    border-radius: 20px; 
+    padding: 45px; 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08); 
+    border-top: 5px solid var(--primary-color); 
+}
+
+/* STATISTIK BOX (PALING BAWAH) */
+.stat-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.stat-number { font-size: 3.5rem; font-weight: 800; color: #333; line-height: 1; }
+.stat-label { font-weight: 700; color: var(--primary-color); text-transform: uppercase; margin-top: 10px; }
+
+/* FOOTER & MAPS */
+footer { background-color: #1a1d20; color: #adb5bd; }
+.map-container { border-radius: 15px; overflow: hidden; height: 300px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+/* WHATSAPP FLOATING WITH PULSE */
+@keyframes pulse-wa {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    background-color: var(--wa-color);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 9999;
+    animation: pulse-wa 2s infinite;
+}
